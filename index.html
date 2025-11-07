@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romina Aalishah | AI Researcher</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #0d1117;
+            color: #c9d1d9;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(13, 17, 23, 0.95);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid #ff9500;
+        }
+
+        nav ul {
+            max-width: 1200px;
+            margin: 0 auto;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 0 20px;
+        }
+
+        nav a {
+            color: #c9d1d9;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: #ff9500;
+        }
+
+        /* Hero */
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 150px 40px 100px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            font-size: 1.5em;
+            color: #ff9500;
+            margin-bottom: 30px;
+        }
+
+        .bio {
+            font-size: 1.1em;
+            max-width: 700px;
+            margin: 0 auto;
+            color: #c9d1d9;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+
+        /* Section */
+        section {
+            margin-bottom: 100px;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            color: #fff;
+            margin-bottom: 40px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #ff9500;
+            display: inline-block;
+        }
+
+        /* Cards */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 30px;
+            transition: border-color 0.2s;
+        }
+
+        .card:hover {
+            border-color: #ff9500;
+        }
+
+        .card h3 {
+            font-size: 1.5em;
+            color: #ff9500;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: #8b949e;
+            line-height: 1.7;
+        }
+
+        /* Publications */
+        .pub-card {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 20px;
+            transition: border-color 0.2s;
+        }
+
+        .pub-card:hover {
+            border-color: #ff9500;
+        }
+
+        .pub-title {
+            font-size: 1.3em;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .pub-authors {
+            color: #8b949e;
+            margin-bottom: 5px;
+        }
+
+        .pub-venue {
+            color: #ff9500;
+            font-weight: 600;
+        }
+
+        .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #238636, #2d7a3e);
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-top: 10px;
+        }
+
+        /* Awards Grid */
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .award-card {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            transition: border-color 0.2s;
+        }
+
+        .award-card:hover {
+            border-color: #ff9500;
+        }
+
+        .award-icon {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .award-title {
+            font-size: 1.1em;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .award-desc {
+            color: #8b949e;
+            font-size: 0.95em;
+        }
+
+        /* Contact */
+        .contact-section {
+            text-align: center;
+            background: #161b22;
+            border: 2px solid #ff9500;
+            border-radius: 12px;
+            padding: 60px 40px;
+        }
+
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #ff9500;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .btn:hover {
+            background: #ffaa33;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #8b949e;
+            border-top: 2px solid #ff9500;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+
+            h2 {
+                font-size: 2em;
+            }
+
+            .subtitle {
+                font-size: 1.2em;
+            }
+
+            nav ul {
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+
+            .grid,
+            .awards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#awards">Awards</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <h1>Romina Aalishah</h1>
+        <p class="subtitle">PhD Researcher in AI & Edge Computing 🌿</p>
+        <p class="bio">
+            Building efficient AI systems at Johns Hopkins University. I focus on making intelligent 
+            algorithms work on resource-constrained devices through hardware-aware optimization and 
+            novel architectures.
+        </p>
+    </div>
+
+    <div class="container">
+        <section id="about">
+            <h2>About</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>🎓 Education</h3>
+                    <p>PhD student in Electrical & Computer Engineering at Johns Hopkins University, working at the EEHPC Lab under Prof. Tinoosh Mohsenin.</p>
+                </div>
+                <div class="card">
+                    <h3>⚡ Research Focus</h3>
+                    <p>Energy-efficient AI, edge computing, Mamba architectures, computer vision, and robotic navigation systems.</p>
+                </div>
+                <div class="card">
+                    <h3>🌱 Approach</h3>
+                    <p>Combining strategic thinking with sustainable design to create AI systems that are both powerful and resource-efficient.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="research">
+            <h2>Research</h2>
+            
+            <div class="card" style="margin-bottom: 25px;">
+                <h3>Edge AI Optimization</h3>
+                <p>Developing hardware-aware neural network compression techniques for efficient deployment on resource-constrained edge devices.</p>
+            </div>
+
+            <div class="card" style="margin-bottom: 25px;">
+                <h3>Mamba Architectures</h3>
+                <p>Pioneering the use of Mamba models for image super-resolution, medical imaging, and object detection applications.</p>
+            </div>
+
+            <div class="card" style="margin-bottom: 25px;">
+                <h3>Robotic Navigation</h3>
+                <p>Vision-language-action models using brain-inspired algorithms and reinforcement learning for autonomous navigation.</p>
+            </div>
+
+            <div class="card">
+                <h3>Knowledge Distillation</h3>
+                <p>Transferring knowledge from large models to compact ones while maintaining performance for practical deployment.</p>
+            </div>
+        </section>
+
+        <section id="publications">
+            <h2>Publications</h2>
+
+            <div class="pub-card">
+                <div class="pub-title">MambaLiteSR: Image Super-Resolution with Low-Rank Mamba using Knowledge Distillation</div>
+                <div class="pub-authors">Romina Aalishah, Mozhgan Navardi, Tinoosh Mohsenin</div>
+                <div class="pub-venue">ISQED Spring Symposium 2025</div>
+                <span class="badge">🏆 Best Poster Award</span>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">GenAI at the Edge: Comprehensive Survey on Empowering Edge Devices</div>
+                <div class="pub-authors">Mozhgan Navardi, Romina Aalishah, et al.</div>
+                <div class="pub-venue">AAAI Spring Symposium 2025</div>
+                <span class="badge">🥈 Second Best Paper</span>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">MedMambaLite: Hardware-Aware Mamba for Medical Image Classification</div>
+                <div class="pub-authors">Romina Aalishah, Mozhgan Navardi, Tinoosh Mohsenin</div>
+                <div class="pub-venue">IEEE BioCAS 2025</div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">EdgeNavMamba: Mamba-Optimized Object Detection for Energy-Efficient Edge Devices</div>
+                <div class="pub-authors">Romina Aalishah, Mozhgan Navardi, Tinoosh Mohsenin</div>
+                <div class="pub-venue">IEEE EdgeCom 2025</div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">EDEN: Entorhinal Driven Egocentric Navigation Toward Robotic Deployment</div>
+                <div class="pub-authors">Mikolaj Walczak, Romina Aalishah, et al.</div>
+                <div class="pub-venue">arXiv 2025</div>
+            </div>
+        </section>
+
+        <section id="awards">
+            <h2>Awards & Recognition</h2>
+            <div class="awards-grid">
+                <div class="award-card">
+                    <div class="award-icon">🥈</div>
+                    <div class="award-title">Second Best Paper</div>
+                    <div class="award-desc">AAAI 2025 Spring Symposium</div>
+                </div>
+
+                <div class="award-card">
+                    <div class="award-icon">⭐</div>
+                    <div class="award-title">Best Poster Award</div>
+                    <div class="award-desc">Women in AI, Johns Hopkins</div>
+                </div>
+
+                <div class="award-card">
+                    <div class="award-icon">🎓</div>
+                    <div class="award-title">Young Student Fellow</div>
+                    <div class="award-desc">DAC 2025</div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="contact-section">
+                <h2>Let's Connect</h2>
+                <p style="font-size: 1.1em; color: #8b949e; max-width: 600px; margin: 0 auto;">
+                    Interested in collaboration or want to discuss research? Feel free to reach out!
+                </p>
+                <div class="contact-buttons">
+                    <a href="mailto:raalish1@jh.edu" class="btn">📧 Email</a>
+                    <a href="https://github.com/rominaaalishah" target="_blank" class="btn">💻 GitHub</a>
+                    <a href="https://www.linkedin.com/in/romina-aalishah" target="_blank" class="btn">💼 LinkedIn</a>
+                    <a href="https://scholar.google.com" target="_blank" class="btn">🎓 Scholar</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2025 Romina Aalishah | PhD Candidate @ Johns Hopkins University</p>
+        <p style="margin-top: 10px; font-size: 0.9em;">Building sustainable & efficient AI 🍃</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+    </script>
+</body>
+</html>
