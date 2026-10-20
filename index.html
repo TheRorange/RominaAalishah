@@ -1136,6 +1136,10 @@ ul { list-style: none; }
 .topic-Long-context { background: #FEF3C7; color: #92400E; }
 .topic-Multimodal  { background: #CCFBF1; color: #0F766E; }
 .topic-NLP         { background: #F3F4F6; color: #374151; }
+.topic-Subliminal-Learning {
+  background: #CCFBF1;
+  color: #0F766E;
+}
 
 /* Contribution tags — outlined pills, clickable, appear after topic tags */
 .pub-topics-divider {
@@ -2271,7 +2275,7 @@ function buildPubCard(pub) {
     : pub.title;
 
   const topicTags = (pub.topics || []).map(t =>
-    `<span class="topic-tag topic-${t}" data-topic="${t}">${t}</span>`
+    `<span class="topic-tag topic-${t.replace(/\s+/g, '-')}" data-topic="${t}">${t}</span>`
   ).join('');
 
   const contribTags = (pub.tags || []).map(t =>
